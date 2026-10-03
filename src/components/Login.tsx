@@ -4,14 +4,13 @@ import BreathingOrb from './BreathingOrb';
 
 interface LoginProps {
   onLogin: (name: string, email: string) => void;
-  onBack: () => void;
 }
 
 function isValidEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
-export default function Login({ onLogin, onBack }: LoginProps) {
+export default function Login({ onLogin }: LoginProps) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
@@ -33,9 +32,7 @@ export default function Login({ onLogin, onBack }: LoginProps) {
   return (
     <div className="min-h-screen bg-cream flex flex-col">
       <header className="max-w-6xl w-full mx-auto px-6 py-6">
-        <button onClick={onBack} aria-label="Retour à l’accueil">
-          <Logo />
-        </button>
+        <Logo />
       </header>
 
       <main className="flex-1 flex items-center justify-center px-6 pb-16">
