@@ -34,32 +34,32 @@ export default function Dashboard({ user, streak, onSignOut }: DashboardProps) {
         <Logo />
         <div className="flex items-center gap-4">
           <div className="hidden sm:flex items-center gap-1.5 text-xs font-semibold text-terracotta-dark bg-rose/40 rounded-full px-3 py-1.5">
-            🔥 {streak}-day streak
+            🔥 {streak} jour{streak > 1 ? 's' : ''} de suite
           </div>
           <button
             onClick={onSignOut}
             className="text-xs font-semibold text-ink-light hover:text-pine transition-colors"
           >
-            Sign out
+            Se déconnecter
           </button>
         </div>
       </header>
 
       <main className="max-w-6xl mx-auto px-6 pb-20">
-        <p className="text-ink-light text-sm">Welcome back,</p>
+        <p className="text-ink-light text-sm">Bon retour,</p>
         <h1 className="font-serif-heading text-3xl md:text-4xl text-pine mt-1">
-          Peace to you, {firstName(user.name)}.
+          Que la paix soit avec toi, {firstName(user.name)}.
         </h1>
 
         <div className="mt-10 grid md:grid-cols-5 gap-6">
           <div className="md:col-span-3 bg-pine rounded-3xl p-8 text-cream flex flex-col justify-between">
             <div>
               <p className="text-xs tracking-[0.2em] uppercase text-rose font-semibold">
-                Today&apos;s Prayer
+                Prière du jour
               </p>
               <h2 className="font-serif-heading text-2xl mt-3">{prayer.title}</h2>
               <p className="font-serif-heading italic text-xl mt-5 leading-snug text-cream/95">
-                &ldquo;{prayer.verse}&rdquo;
+                &laquo; {prayer.verse} &raquo;
               </p>
               <p className="text-sm text-cream/70 mt-2">{prayer.reference}</p>
               <p className="mt-6 text-cream/90 leading-relaxed">{prayer.prayer}</p>
@@ -69,15 +69,15 @@ export default function Dashboard({ user, streak, onSignOut }: DashboardProps) {
           <div className="md:col-span-2 bg-white rounded-3xl border border-line/70 flex flex-col items-center justify-center p-8 text-center">
             <BreathingOrb size={200} />
             <p className="mt-5 text-sm text-ink-light">
-              Take one minute. Breathe with the circle.
+              Prends une minute. Respire au rythme du cercle.
             </p>
           </div>
         </div>
 
         <div className="mt-14 flex items-center justify-between">
-          <h2 className="font-serif-heading text-2xl text-pine">Meditations</h2>
+          <h2 className="font-serif-heading text-2xl text-pine">Méditations</h2>
           <p className="text-sm text-ink-light">
-            {completed.length} of {meditations.length} completed
+            {completed.length} sur {meditations.length} terminées
           </p>
         </div>
 
@@ -96,12 +96,12 @@ export default function Dashboard({ user, streak, onSignOut }: DashboardProps) {
                   </span>
                   {done && (
                     <span className="text-xs font-semibold text-pine bg-pine/10 rounded-full px-2 py-0.5">
-                      ✓ Done
+                      ✓ Terminée
                     </span>
                   )}
                 </div>
                 <h3 className="font-serif-heading text-xl text-pine mt-2">{m.title}</h3>
-                <p className="text-sm text-ink-light mt-2 italic">&ldquo;{m.verse}&rdquo;</p>
+                <p className="text-sm text-ink-light mt-2 italic">&laquo; {m.verse} &raquo;</p>
                 <p className="text-xs text-ink-light/70 mt-1">{m.reference}</p>
               </button>
             );

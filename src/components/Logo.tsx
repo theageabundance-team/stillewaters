@@ -24,7 +24,7 @@ export default function Logo({ subtitle = true }: { subtitle?: boolean }) {
         <div className="font-serif-heading text-xl text-pine">Still Waters</div>
         {subtitle && (
           <div className="text-[10px] tracking-[0.18em] text-ink-light/70 font-medium">
-            MEDITATION &amp; DAILY PRAYER
+            MÉDITATION &amp; PRIÈRE QUOTIDIENNE
           </div>
         )}
       </div>

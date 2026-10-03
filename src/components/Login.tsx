@@ -19,11 +19,11 @@ export default function Login({ onLogin, onBack }: LoginProps) {
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
     if (name.trim().length < 2) {
-      setError('Please enter your full name.');
+      setError('Merci d’indiquer ton nom complet.');
       return;
     }
     if (!isValidEmail(email.trim())) {
-      setError('Please enter a valid email address.');
+      setError('Merci d’indiquer une adresse e-mail valide.');
       return;
     }
     setError('');
@@ -33,7 +33,7 @@ export default function Login({ onLogin, onBack }: LoginProps) {
   return (
     <div className="min-h-screen bg-cream flex flex-col">
       <header className="max-w-6xl w-full mx-auto px-6 py-6">
-        <button onClick={onBack} aria-label="Back to home">
+        <button onClick={onBack} aria-label="Retour à l’accueil">
           <Logo />
         </button>
       </header>
@@ -43,23 +43,25 @@ export default function Login({ onLogin, onBack }: LoginProps) {
           <div className="hidden md:flex flex-col items-center text-center">
             <BreathingOrb size={260} />
             <p className="mt-6 text-sm text-ink-light italic max-w-xs">
-              &ldquo;Come to me, all you who are weary, and I will give you rest.&rdquo;
+              &laquo; Venez à moi, vous tous qui êtes fatigués, et je vous donnerai du
+              repos. &raquo;
               <br />
               <span className="not-italic text-xs text-ink-light/70">
-                Matthew 11:28
+                Matthieu 11.28
               </span>
             </p>
           </div>
 
           <div className="bg-white rounded-3xl border border-line/70 shadow-sm p-8 md:p-10">
             <p className="uppercase tracking-[0.2em] text-xs font-semibold text-terracotta-dark">
-              Welcome
+              Bienvenue
             </p>
             <h1 className="font-serif-heading text-3xl text-pine mt-2">
-              Enter Still Waters
+              Entrer dans Still Waters
             </h1>
             <p className="text-sm text-ink-light mt-2">
-              Tell us your name and email to begin today&apos;s meditation and prayer.
+              Indique ton nom et ton e-mail pour commencer la méditation et la prière du
+              jour.
             </p>
 
             <form onSubmit={handleSubmit} className="mt-7 space-y-4">
@@ -68,7 +70,7 @@ export default function Login({ onLogin, onBack }: LoginProps) {
                   htmlFor="name"
                   className="block text-xs font-semibold text-ink-light mb-1.5"
                 >
-                  Full name
+                  Nom complet
                 </label>
                 <input
                   id="name"
@@ -76,7 +78,7 @@ export default function Login({ onLogin, onBack }: LoginProps) {
                   autoComplete="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="Jane Doe"
+                  placeholder="Claire Dupont"
                   className="w-full rounded-xl border border-line px-4 py-3 text-sm outline-none focus:border-pine focus:ring-2 focus:ring-pine/15 transition-shadow bg-cream/40"
                 />
               </div>
@@ -85,7 +87,7 @@ export default function Login({ onLogin, onBack }: LoginProps) {
                   htmlFor="email"
                   className="block text-xs font-semibold text-ink-light mb-1.5"
                 >
-                  Email used at purchase
+                  E-mail utilisé lors de l’achat
                 </label>
                 <input
                   id="email"
@@ -93,7 +95,7 @@ export default function Login({ onLogin, onBack }: LoginProps) {
                   autoComplete="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="jane@email.com"
+                  placeholder="claire@email.com"
                   className="w-full rounded-xl border border-line px-4 py-3 text-sm outline-none focus:border-pine focus:ring-2 focus:ring-pine/15 transition-shadow bg-cream/40"
                 />
               </div>
@@ -104,11 +106,11 @@ export default function Login({ onLogin, onBack }: LoginProps) {
                 type="submit"
                 className="w-full bg-pine hover:bg-pine-dark text-white rounded-full px-6 py-3.5 text-sm font-semibold transition-colors"
               >
-                Enter
+                Entrer
               </button>
               <p className="text-xs text-ink-light/70 text-center pt-1">
-                No password needed — just the name and email you used to get Still
-                Waters.
+                Aucun mot de passe nécessaire — juste le nom et l’e-mail utilisés pour
+                obtenir Still Waters.
               </p>
             </form>
           </div>

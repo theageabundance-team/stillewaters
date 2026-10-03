@@ -33,7 +33,7 @@ export default function MeditationPlayer({
           onClick={onClose}
           className="text-sm text-cream/70 hover:text-cream transition-colors"
         >
-          ← Back
+          ← Retour
         </button>
         <span className="text-xs tracking-[0.2em] uppercase text-rose font-semibold">
           {meditation.theme}
@@ -45,7 +45,7 @@ export default function MeditationPlayer({
 
         <h1 className="font-serif-heading text-3xl mt-10">{meditation.title}</h1>
         <p className="font-serif-heading italic text-xl mt-4 max-w-lg text-cream/95">
-          &ldquo;{meditation.verse}&rdquo;
+          &laquo; {meditation.verse} &raquo;
         </p>
         <p className="text-sm text-cream/60 mt-2">{meditation.reference}</p>
 
@@ -58,7 +58,7 @@ export default function MeditationPlayer({
               onClick={() => setStep((s) => s + 1)}
               className="mt-10 bg-terracotta hover:bg-terracotta-dark text-white rounded-full px-8 py-3.5 text-sm font-semibold transition-colors"
             >
-              {isLast ? 'Finish' : 'Continue'}
+              {isLast ? 'Terminer' : 'Continuer'}
             </button>
             <div className="mt-6 flex gap-1.5">
               {meditation.body.map((_, i) => (
@@ -74,13 +74,13 @@ export default function MeditationPlayer({
         ) : (
           <>
             <p className="max-w-md mt-8 text-cream/90 leading-relaxed">
-              Amen. Carry this stillness with you into the rest of your day.
+              Amen. Emporte ce calme avec toi pour le reste de ta journée.
             </p>
             <button
               onClick={onClose}
               className="mt-10 bg-cream text-pine hover:bg-white rounded-full px-8 py-3.5 text-sm font-semibold transition-colors"
             >
-              Return to meditations
+              Retour aux méditations
             </button>
           </>
         )}

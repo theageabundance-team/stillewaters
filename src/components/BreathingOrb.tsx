@@ -5,8 +5,8 @@ interface BreathingOrbProps {
 }
 
 export default function BreathingOrb({
-  label = 'BREATHE IN',
-  caption = '"Be still..."',
+  label = 'INSPIRE',
+  caption = '« Sois calme... »',
   size = 320,
 }: BreathingOrbProps) {
   return (
